@@ -1,5 +1,4 @@
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    std::env::set_var("TIP_OUT_DIR", "src/proto");
     tonic_build::configure()
         .build_server(false)
         .out_dir("src/proto")

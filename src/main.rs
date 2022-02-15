@@ -1,5 +1,31 @@
 pub mod api {
-    tonic_include_protos::include_protos!("com.daml.ledger.api.v1");
+    pub mod com {
+        pub mod daml {
+            pub mod ledger {
+                pub mod api {
+                    pub mod v1 {
+                        include!("proto/com.daml.ledger.api.v1.rs");
+                        pub mod testing {
+                            include!("proto/com.daml.ledger.api.v1.testing.rs");
+                        }
+
+                        pub mod admin {
+                            include!("proto/com.daml.ledger.api.v1.admin.rs");
+                        }
+                    }
+                }
+            }
+        }
+    }
+    pub mod google {
+        pub mod protobuf {
+            include!("proto/google.protobuf.rs");
+        }
+
+        pub mod rpc {
+            include!("proto/google.rpc.rs");
+        }
+    }
 }
 
 use api::com::daml::ledger::api::v1::ledger_identity_service_client::LedgerIdentityServiceClient;
