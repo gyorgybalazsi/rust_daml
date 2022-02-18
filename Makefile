@@ -3,4 +3,4 @@ JWT=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImRhYmwtZDBmODg0NjctZjU4NC00Nzhk
 TLS_CERT_FILE=./isrgrootx1.pem
 
 start : 
-	cargo run main ${LEDGER_ID} ${JWT} ${TLS_CERT_FILE}
+	cargo run ${LEDGER_ID} ${JWT} ${TLS_CERT_FILE}
