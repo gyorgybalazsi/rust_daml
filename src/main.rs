@@ -51,7 +51,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let uri = format!("https://{}.daml.app:443", ledger_id);
 
-    let endpoint = Endpoint::from_shared(uri.to_string())?
+    let endpoint = Endpoint::from_shared(uri)?
         .tls_config(tls)?
         .connect()
         .await?;
